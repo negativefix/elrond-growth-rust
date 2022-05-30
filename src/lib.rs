@@ -1,6 +1,3 @@
-extern crate serde;
-extern crate reqwest;
-
 use serde::Deserialize;
 use reqwest::Response;
 

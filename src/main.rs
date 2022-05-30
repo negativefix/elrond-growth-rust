@@ -1,7 +1,4 @@
-extern crate elrond_growth_rust;
-
 use elrond_growth_rust::{market_value, EGResult};
-
 
 #[tokio::main]
 async fn main() -> EGResult<()> {
