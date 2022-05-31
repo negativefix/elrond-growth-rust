@@ -19,7 +19,6 @@ pub struct DataPoint<T> {
 pub async fn fetch(endpoint: &str) -> EGResult<Response> {
     let url = format!("{}{}", ORIGIN, endpoint);
     let res = reqwest::get(&url).await?;
-    println!("status: {:#?}", res.status());
     Ok(res)
 }
  
