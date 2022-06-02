@@ -78,18 +78,21 @@ pub mod supply {
     use super::endpoints;
     use super::fetch;
 
+    /// Returns number of egld in circulation
     pub async fn circulating_supply() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::CIRCULATING_SUPPLY).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns number of EGLD available to trade
     pub async fn floating_supply() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::FLOATING_SUPPLY).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns number of staked EGLD
     pub async fn staked() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::STAKED).await?; 
         let data_points = res.json().await?;
