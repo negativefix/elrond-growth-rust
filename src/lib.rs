@@ -9,14 +9,6 @@ pub use errors::EGResult;
 const ORIGIN: &str = "https://data.elrond.com/";
 
 /// A single datapoint in a dataset returned from elrond growth endpoints
-/// 
-/// #Example
-/// ```rust
-/// let data_point:<u32> = DataPoint {
-///     time: "2020-09-03T00:00:00.000Z",
-///     value: 1111
-/// }
-/// ``` 
 #[derive(Deserialize, Debug)]
 pub struct DataPoint<T> {
     #[allow(unused)]
