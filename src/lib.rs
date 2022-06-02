@@ -168,12 +168,14 @@ pub mod transactions {
     use super::endpoints;
     use super::fetch;
 
+    /// Returns number of daily transactions
     pub async fn total_transactions() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::TRANSACTIONS_TOTAL).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns number of transaction for the last 24 hours
     pub async fn transactions_24h() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::TRANSACTIONS_24H).await?; 
         let data_points = res.json().await?;
@@ -235,67 +237,77 @@ pub mod exchanges {
     use super::endpoints;
     use super::fetch;
 
+    /// Returns daily EGLD balance for all exchanges 
     pub async fn exchanges_total_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(super::endpoints::EXCHANGES_TOTAL_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns EGLD balance for bitmax
     pub async fn bitmax_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BITMAX_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns daily EGLD balance for binance.com
     pub async fn binance_com_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BINANCE_COM_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns daily EGLD balance for binance.us
     pub async fn binance_us_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BINANCE_US_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-
+    /// Returns daily EGLD balance for bitfinex
     pub async fn bitfinex_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BITFINEX_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns daily EGLD balance for bithumb
     pub async fn bithumb_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BITHUMB_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns daily EGLD balance for crypto.com
     pub async fn crypto_com_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::CRYPTO_COM_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns dailys EGLD balance for kucoin
     pub async fn kucoin_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::KUCOIN_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns daily EGLD balance for okex
     pub async fn okex_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::OKEX_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns daily exchange inflow
     pub async fn inflow_24h() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::INFLOW_24).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns daily exchange outflow
     pub async fn outflow_24h() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::OUTFLOW_24).await?; 
         let data_points = res.json().await?;
@@ -330,18 +342,22 @@ pub mod dev_activity {
 
     use super::{fetch, endpoints, EGResult, DataPoint};
 
+    /// Returns number of commits
     pub async fn commits() -> EGResult<u32> {
         let res = fetch(endpoints::COMMITS).await?;
         let commits = res.json().await?;
         Ok(commits)
     }
-    
+   
+    /// Returns number of github stars
     pub async fn stars() -> EGResult<u32> {
         let res = fetch(endpoints::STARS).await?;
         let stars = res.json().await?;
         Ok(stars)
     }
 
+
+    /// Returns number of daily commits
     pub async fn commits_24h() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::COMMITS_24H).await?; 
         let data_points = res.json().await?;
