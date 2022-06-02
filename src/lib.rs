@@ -325,12 +325,14 @@ pub mod socials {
     use super::endpoints;
     use super::fetch;
 
+    /// Returns number of daily twitter mentions over the last week 
     pub async fn mentions() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::MENTIONS).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns number of page impressions for the elrond.com over the last week
     pub async fn impressions() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::IMPRESSIONS).await?; 
         let data_points = res.json().await?;
