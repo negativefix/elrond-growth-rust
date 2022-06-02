@@ -357,7 +357,7 @@ pub mod dev_activity {
     }
 
 
-    /// Returns number of daily commits
+    /// Returns number of daily commits for the last week
     pub async fn commits_24h() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::COMMITS_24H).await?; 
         let data_points = res.json().await?;
