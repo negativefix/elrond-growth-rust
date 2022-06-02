@@ -109,42 +109,49 @@ pub mod user_adoption {
     use super::endpoints;
     use super::fetch;
 
+    /// Returns total number of elrond network users
     pub async fn user_count() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
-    
+   
+    /// Returns number of users with non-zero account balance
     pub async fn user_count_gt_0() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_0).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Return number of users hodling more than 0.1 up to 1 EGLD
     pub async fn user_count_gt_0_1() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_0_1).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
     
+    /// Return number of users hodling more than 1 EGLD
     pub async fn user_count_gt_1() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_1).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returs number of users hodling more than 10 EGLD
     pub async fn user_count_gt_10() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_10).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
+    /// Returns number of users hodling more than 100 EGLD
     pub async fn user_count_gt_100() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_100).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
-    
+
+    /// Returns number of users hodling more than 1000 EGLD
     pub async fn user_count_gt_1000() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_1000).await?; 
         let data_points = res.json().await?;
