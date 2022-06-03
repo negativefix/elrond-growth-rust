@@ -32,11 +32,6 @@ pub mod market_value {
     use super::fetch;
     
     /// Returns the current EGLD price
-    /// 
-    /// # Example
-    /// ```rust
-    /// let price = market_value::price().await?;
-    /// ```
     pub async fn price() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::PRICE).await?;
         let data_points = res.json().await?;
@@ -44,11 +39,6 @@ pub mod market_value {
     }
 
     /// Returns the current EGLD martket cap
-    /// 
-    /// # Example
-    /// ```rust
-    /// let mcap = market_value::market_cap().await?;
-    /// ```
     pub async fn market_cap() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::MARKET_CAP).await?;
         let data_points = res.json().await?;
@@ -56,11 +46,6 @@ pub mod market_value {
     }
 
     /// Returns the exchange volume for the past 24 hours 
-    /// 
-    /// # Example
-    /// ```rust
-    /// let mcap = market_value::exchange_volume_24h().await?;
-    ///```
     pub async fn exchange_volume_24h() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::VOLUME_24H).await?; 
         let data_points = res.json().await?;
