@@ -17,7 +17,7 @@ pub struct DataPoint<T> {
     pub value: T,
 }
 
-pub async fn fetch(endpoint: &str) -> EGResult<Response> {
+async fn fetch(endpoint: &str) -> EGResult<Response> {
     let url = format!("{}{}", ORIGIN, endpoint);
     let res = reqwest::get(&url).await?;
     Ok(res)
@@ -184,7 +184,7 @@ pub mod transactions {
 
 }
 
-// Staking Metrics
+// Staking Metrics 
 pub mod staking_metrics {
     
     use crate::EGResult;
