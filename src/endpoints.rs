@@ -20,6 +20,13 @@ pub const QUEUE_STAKING_TOTAL: &str = "latestseries/staking/staking/waiting_list
 pub const QUEUE_DELEGATED_TOTAL: &str = "latestseries/staking/delegation/waiting_list_value";
 pub const QUEUE_DELEGATING_TOTAL: &str = "latestseries/staking/delegation/waiting_list";
 
+pub const TOTAL_STAKED: &str = "latestseries/economics/economics/staked";
+pub const TOTAL_USERS_STAKING: &str = "series/stakinghistorical/total/users";
+pub const ACTIVE_STAKED:&str = "latestseries/stakinghistorical/staking/value";
+pub const ACTIVE_USERS_STAKIN: &str = "latestseries/stakinghistorical/staking/value";
+pub const DELEGATED_STAKED: &str = "stakinghistorical/legacydelegation/value";
+pub const DELEGATED_USERS_STAKING: &str = "series/stakinghistorical/legacydelegation/users";
+
 // Exchanges
 pub const EXCHANGES_TOTAL_BALANCE: &str = "latestseries/exchanges/total/balance";
 pub const BITMAX_BALANCE: &str = "latestseries/exchanges/bitmax/balance";
