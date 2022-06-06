@@ -63,21 +63,21 @@ pub mod supply {
     use super::endpoints;
     use super::fetch;
 
-    /// Returns number of egld in circulation
+    /// Returns the number of egld in circulation
     pub async fn circulating_supply() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::CIRCULATING_SUPPLY).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns number of EGLD available to trade
+    /// Returns the number of EGLD available to trade
     pub async fn floating_supply() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::FLOATING_SUPPLY).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns number of staked EGLD
+    /// Returns the number of staked EGLD
     pub async fn staked() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::STAKED).await?; 
         let data_points = res.json().await?;
@@ -94,21 +94,21 @@ pub mod user_adoption {
     use super::endpoints;
     use super::fetch;
 
-    /// Returns total number of elrond network users
+    /// Returns the total number of elrond network users
     pub async fn user_count() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
    
-    /// Returns number of users with non-zero account balance
+    /// Returns the number of users with non-zero account balance
     pub async fn user_count_gt_0() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_0).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Return number of users hodling more than 0.1 up to 1 EGLD
+    /// Returns the number of users hodling more than 0.1 up to 1 EGLD
     pub async fn user_count_gt_0_1() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_0_1).await?; 
         let data_points = res.json().await?;
@@ -129,14 +129,14 @@ pub mod user_adoption {
         Ok(data_points)
     }
 
-    /// Returns number of users hodling more than 100 EGLD
+    /// Returns the number of users hodling more than 100 EGLD
     pub async fn user_count_gt_100() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_100).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns number of users hodling more than 1000 EGLD
+    /// Returns the number of users hodling more than 1000 EGLD
     pub async fn user_count_gt_1000() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::USER_COUNT_GT_1000).await?; 
         let data_points = res.json().await?;
@@ -153,14 +153,14 @@ pub mod transactions {
     use super::endpoints;
     use super::fetch;
 
-    /// Returns number of daily transactions
+    /// Returns the number of total daily transactions
     pub async fn total_transactions() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::TRANSACTIONS_TOTAL).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns number of transaction for the last 24 hours
+    /// Returns the number of transactions for the last 24 hours
     pub async fn transactions_24h() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::TRANSACTIONS_24H).await?; 
         let data_points = res.json().await?;
@@ -177,6 +177,7 @@ pub mod staking_metrics {
     use super::endpoints;
     use super::fetch;
 
+    //
     pub async fn queued_value_total() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::QUEUED_VALUE_TOTAL).await?; 
         let data_points = res.json().await?;
@@ -222,77 +223,77 @@ pub mod exchanges {
     use super::endpoints;
     use super::fetch;
 
-    /// Returns daily EGLD balance for all exchanges 
+    /// Returns the total daily EGLD balance for all exchanges
     pub async fn exchanges_total_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(super::endpoints::EXCHANGES_TOTAL_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns EGLD balance for bitmax
+    /// Returns the daily EGLD balance for bitmax
     pub async fn bitmax_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BITMAX_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily EGLD balance for binance.com
+    /// Returns the daily EGLD balance for binance.com
     pub async fn binance_com_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BINANCE_COM_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily EGLD balance for binance.us
+    /// Returns the daily EGLD balance for binance.us
     pub async fn binance_us_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BINANCE_US_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily EGLD balance for bitfinex
+    /// Returns the daily EGLD balance for bitfinex
     pub async fn bitfinex_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BITFINEX_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily EGLD balance for bithumb
+    /// Returns the daily EGLD balance for bithumb
     pub async fn bithumb_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::BITHUMB_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily EGLD balance for crypto.com
+    /// Returns the daily EGLD balance for crypto.com
     pub async fn crypto_com_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::CRYPTO_COM_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns dailys EGLD balance for kucoin
+    /// Returns the dailys EGLD balance for kucoin
     pub async fn kucoin_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::KUCOIN_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily EGLD balance for okex
+    /// Returns the daily EGLD balance for okex
     pub async fn okex_balance() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::OKEX_BALANCE).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily exchange inflow
+    /// Returns the daily exchange inflow
     pub async fn inflow_24h() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::INFLOW_24).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns daily exchange outflow
+    /// Returns the daily exchange outflow
     pub async fn outflow_24h() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::OUTFLOW_24).await?; 
         let data_points = res.json().await?;
@@ -310,14 +311,14 @@ pub mod socials {
     use super::endpoints;
     use super::fetch;
 
-    /// Returns number of daily twitter mentions over the last week 
+    /// Returns the number of daily twitter mentions over the last week 
     pub async fn mentions() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::MENTIONS).await?; 
         let data_points = res.json().await?;
         Ok(data_points)
     }
 
-    /// Returns number of page impressions for the elrond.com over the last week
+    /// Returns the number of page impressions for the elrond.com over the last week
     pub async fn impressions() -> EGResult<Vec<DataPoint<f64>>> {
         let res = fetch(endpoints::IMPRESSIONS).await?; 
         let data_points = res.json().await?;
@@ -329,14 +330,14 @@ pub mod dev_activity {
 
     use super::{fetch, endpoints, EGResult, DataPoint};
 
-    /// Returns number of commits
+    /// Returns the total number of commits
     pub async fn commits() -> EGResult<u32> {
         let res = fetch(endpoints::COMMITS).await?;
         let commits = res.json().await?;
         Ok(commits)
     }
    
-    /// Returns number of github stars
+    /// Returns the total number of github stars
     pub async fn stars() -> EGResult<u32> {
         let res = fetch(endpoints::STARS).await?;
         let stars = res.json().await?;
@@ -344,7 +345,7 @@ pub mod dev_activity {
     }
 
 
-    /// Returns number of daily commits for the last week
+    /// Returns the number of commits made daily over the last week 
     pub async fn commits_24h() -> EGResult<Vec<DataPoint<u64>>> {
         let res = fetch(endpoints::COMMITS_24H).await?; 
         let data_points = res.json().await?;
