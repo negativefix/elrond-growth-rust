@@ -23,9 +23,14 @@ pub const QUEUE_DELEGATING_TOTAL: &str = "latestseries/staking/delegation/waitin
 pub const TOTAL_STAKED: &str = "latestseries/economics/economics/staked";
 pub const TOTAL_USERS_STAKING: &str = "series/stakinghistorical/total/users";
 pub const ACTIVE_STAKED:&str = "latestseries/stakinghistorical/staking/value";
-pub const ACTIVE_USERS_STAKIN: &str = "latestseries/stakinghistorical/staking/value";
-pub const DELEGATED_STAKED: &str = "stakinghistorical/legacydelegation/value";
-pub const DELEGATED_USERS_STAKING: &str = "series/stakinghistorical/legacydelegation/users";
+pub const ACTIVE_USERS_STAKING: &str = "latestseries/stakinghistorical/staking/user";
+pub const LEGACY_DELEGATED_STAKED: &str = "stakinghistorical/legacydelegation/value";
+pub const LEGACY_DELEGATED_USERS_STAKING: &str = "series/stakinghistorical/legacydelegation/users";
+pub const DELEGATION_ACTIVE_STAKED: &str = "latestseries/stakinghistorical/delegation/value";
+pub const DELEGATION_ACTIVE_STAKING: &str = "series/stakinghistorical/delegation/users";
+pub const ACTIVE_DELEGATED: &str = "latestseries/staking/delegation/active_value";
+pub const ACTIVE_USER_DELEGATING: &str = "latestseries/staking/delegation/active";
+
 
 // Exchanges
 pub const EXCHANGES_TOTAL_BALANCE: &str = "latestseries/exchanges/total/balance";
