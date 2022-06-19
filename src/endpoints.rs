@@ -50,7 +50,7 @@ pub const COMMITS: &str = "latest/githubactivity/total/commits";
 pub const COMMITS_24H: &str = "latestseries/githubactivity/total/commits_24h";
 pub const STARS: &str = "latest/githubactivity/total/stars";
 
-// User Adaoption
+// User Adoption
 pub const USER_COUNT: &str = "latestcomplete/accountshistorical/accounts/count";
 pub const USER_COUNT_GT_0: &str = "latestcomplete/accountshistorical/totalbalancewithstake/count_gt_0";
 pub const USER_COUNT_GT_0_1: &str = "latestcomplete/accountshistorical/totalbalancewithstake/count_gt_0_1";
