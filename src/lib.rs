@@ -215,6 +215,17 @@ pub mod staking_metrics {
     }
 
     // TODO - implement and document additional endpoints
+    pub async fn total_staked() -> EGResult<Vec<DataPoint<u64>>> {
+        let res = fetch(endpoints::TOTAL_STAKED).await?
+        let data_points = res.json().await?;
+        Ok(data_points)
+    }
+
+   pub async fn total_users_staking() -> EGResult<Vec<DataPoint<u64>>> {
+    let res = fetch(endpoints::TOTAL_USERS_STAKING).await?;
+    let data_points = res.json().await?;
+    Ok(data_points)
+   }
 
 }
 
